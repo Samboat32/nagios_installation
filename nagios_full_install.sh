@@ -183,7 +183,61 @@ sudo systemctl start apache2
 cd /var/www/html
 sudo rm index.html
 sudo bash -c 'cat > index.html <<EOL
-<h1>Welcome to Apache2 Web Server</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Server 1 Card</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F4F4F4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .card {
+            background-color: #FFFFFF;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            width: 300px;
+            padding: 20px;
+            text-align: center;
+        }
+        .card h2 {
+            margin: 0 0 15px;
+            color: #333333;
+        }
+        .card p {
+            color: #777777;
+            margin: 0 0 15px;
+        }
+        .card .status {
+            display: inline-block;
+            padding: 5px 15px;
+            border-radius: 20px;
+            background-color: #28A745;
+            color: white;
+            font-weight: bold;
+        }
+        .card .status.down {
+            background-color: #DC3545;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h2>Hey there!</h2>
+        <p>Welcome!</p>
+        <p>This is a Test Webpage by Donatus</p>
+        <p>Jomacs DevOps Trainee</p>
+        <p class="status">Online</p>
+    </div>
+</body>
+</html>
 EOL'
 
 # Step 28: Add HTTP Service to nagihost.cfg File in Nagios Server
